@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:9099"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/padawan
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+    networks:
+      - padawan_network
+
+  postgres:
+    image: postgres:13
+    container_name: postgres-padawan
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: padawan
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - padawan_network
+
+volumes:
+  postgres_data:
+networks:
+  padawan_network:
+    driver: bridge
