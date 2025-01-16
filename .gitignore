@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignorar diretórios e arquivos da IDE Eclipse
+.metadata/
+bin/
