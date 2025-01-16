@@ -66,13 +66,8 @@
 		    <groupId>org.glassfish</groupId>
 		    <artifactId>jakarta.el</artifactId>
 		    <version>3.0.3</version> 
-		</dependency>
-		
-    	<dependency>
-    		<groupId>com.example</groupId>
-    		<artifactId>Api</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
-    	</dependency>
+		</dependency>	
+    	
     </dependencies>
 
     <build>
