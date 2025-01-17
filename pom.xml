@@ -16,9 +16,11 @@
 
     <properties>
         <java.version>11</java.version>
-        <spring.datasource.url>jdbc:postgresql://localhost:5432/padawan</spring.datasource.url>
+        <spring.datasource.url>jdbc:postgresql://localhost:5432/padawan?charSet=UTF-8</spring.datasource.url>
         <spring.datasource.username>postgres</spring.datasource.username>
-        <spring.datasource.password>password</spring.datasource.password>
+        <spring.datasource.password>101021</spring.datasource.password>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -42,6 +44,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20190722</version>
         </dependency>
 
     </dependencies>
