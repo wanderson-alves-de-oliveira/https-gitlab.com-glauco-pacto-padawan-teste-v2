@@ -1,6 +1,6 @@
 package com.padwan.test.controller;
 
-import com.padwan.test.service.VaderService;
+import com.padwan.test.service.WandersonService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/vader")
-public class VaderController {
+@RequestMapping("/wanderson")
+public class WandersonController {
 
-    private VaderService vaderService;
+    private WandersonService wandersonService;
 
     @Autowired
-    public VaderController(VaderService vaderService){
-        this.vaderService = vaderService;
+    public WandersonController(WandersonService wandersonService){
+        this.wandersonService = wandersonService;
     }
 
     @ResponseBody
@@ -28,7 +28,7 @@ public class VaderController {
     public ResponseEntity<Object> skills() {
         try {
             JSONObject json = new JSONObject();
-            json.put("Darth Vader", vaderService.skills());
+            json.put("Wanderson ", wandersonService.skills());
             return new ResponseEntity(json.toString(), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
